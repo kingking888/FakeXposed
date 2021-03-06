@@ -11,3 +11,18 @@
 - Fix missing syscall open call number
 - Change the new Runtime.exec matching rules and take effect
 - Add Android 25 support
+
+### v1.3
+- Modify the data reading mode, adjust the targetSdk to 23, the old version needs to be uninstalled and installed, and use XsharedPreference directly below Android9
+- Change some Java Hooks to Native Java Hooks, which are more general and stable and anti-detection
+- Add the Edxposed package name to the blacklist by default, so that other applications can access it when you can’t access it
+- Partial code optimization
+
+### v1.4
+- Modify package name and application introduction
+- Add test options
+
+### v1.5
+- Fix the circular dependency issue below Android7
+- Fix some dynamic proxy errors
+- Fixed some cases where Android11 could not read the file path 

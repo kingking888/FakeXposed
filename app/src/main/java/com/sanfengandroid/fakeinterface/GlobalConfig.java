@@ -300,10 +300,10 @@ public class GlobalConfig {
                     case RUNTIME_EXEC_HIDE:
                         RuntimeExecModel runModel = (RuntimeExecModel) model;
                         runModel.getBean().transform();
-                        List<ExecBean> list = runtimeBlackList.get(runModel.getBean().originalCommand);
+                        List<ExecBean> list = runtimeBlackList.get(runModel.getBean().oldCmd);
                         if (list == null) {
                             list = new ArrayList<>();
-                            runtimeBlackList.put(runModel.getBean().originalCommand, list);
+                            runtimeBlackList.put(runModel.getBean().oldCmd, list);
                         }
                         list.add(runModel.getBean());
                         break;
@@ -323,6 +323,8 @@ public class GlobalConfig {
                 }
             }
         }
+        // edxposed 有时获取不到,默认添加至黑名单
+        packageBlacklist.put(DefaultLists.EDXPOSED_PACKAGE, DefaultLists.EDXPOSED_PACKAGE);
     }
 
     public static Map<String, Set<ShowDataModel>> transformBundle(Bundle bundle) {
